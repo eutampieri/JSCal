@@ -3,10 +3,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="calendar.js"></script>
         <link rel="stylesheet" href="calendar.css">
+        <link rel="stylesheet" href="calTheme.css">
     </head>
     <body>
         <div id="calendario"></div>
         <script>
+            var d=new Date();
+            Calendar.markedDates=[new Date(2017,11,8).getTime(), new Date(d.getFullYear(), d.getMonth(), d.getDate()+7).getTime()];
+            Calendar.fullSizeText=true;
             Calendar.load(calendario);
         </script>
     </body>

@@ -1,0 +1,41 @@
+#calendario{
+    max-width:500px;
+    margin:auto;
+    font-family: sans-serif;
+}
+.cal-button{
+    height:1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.cal-button-l {
+    background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_keyboard_arrow_left_black_24px.svg);
+}
+.cal-button-r {
+    background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_keyboard_arrow_right_black_24px.svg);
+}
+.cal-day, .cal-h-day{
+    padding:0.5em 0;
+}
+.cal-day{
+    border-radius: 0.25em;
+}
+.cal-h-day{
+    background-color:#E7E9ED;
+}
+.cal-today{
+    background-color: #0A9297;
+    color:#fff;
+}
+.cal-marked{
+    padding-bottom: 0.3em;
+    background-image:
+    url(dot.svg);
+    background-size: 0.3em;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.cal-b-title, .cal-title{
+    font-size:1.3em;
+}

@@ -21,3 +21,7 @@
 .cal-button{
     width:1.5em;
 }
+.cal-head{
+    display: flex;
+    justify-content: space-evenly;
+}
