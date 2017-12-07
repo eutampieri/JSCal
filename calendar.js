@@ -18,7 +18,7 @@ var Calendar={
     primo: null,//Il primo giorno del mese che giorno era della settimana?
     populatedElement: null,
     titolo: (function(){var a=document.createElement("div");a.classList.add("cal-month");return a;})(),    
-    init: function(element, buttons=true){
+    init: function(element, buttons){
         //while(this.mondayFirst===null);
         this.giorno=adesso.getDate(),
         this.mese=adesso.getMonth(),
@@ -78,7 +78,7 @@ var Calendar={
         }
         element.appendChild(calWrapper);
     },
-    load: function(obj){
+    load: function(obj, btn=true){
         console.log(this.init);
         getUrlPromise("lang/"+navigator.language.split("-")[0]+".lang").then(function(r){
             if(r==null){
@@ -95,7 +95,7 @@ var Calendar={
                 this.Calendar.mondayFirst=loc.MondayFirst;
                 this.Calendar.months=loc.months;
                 this.Calendar.days = loc.days;
-                this.Calendar.init(obj);
+                this.Calendar.init(obj,btn);
             }
         });
     },

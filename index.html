@@ -1,31 +1,8 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="calendar.js"></script>
-        <style>
-            .cal-wrapper{
-                display:flex;
-                flex-wrap: wrap;
-            }
-            .cal-day, .cal-h-day{
-                flex-basis: 14.28%;
-                text-align: center;
-            }
-            .cal-h-day{
-                font-weight: bold;
-            }
-            .cal-month{
-                text-align: center;
-            }
-            .cal-b-title{
-                width:calc(100% - 3em);
-            }
-            .cal-b-title, .cal-button{
-                display: inline-block;
-            }
-            .cal-button{
-                width:1.5em;
-            }
-        </style>
+        <link rel="stylesheet" href="calendar.css">
     </head>
     <body>
         <div id="calendario"></div>

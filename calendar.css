@@ -1,0 +1,23 @@
+.cal-wrapper{
+    display:flex;
+    flex-wrap: wrap;
+}
+.cal-day, .cal-h-day{
+    flex-basis: 14.28%;
+    text-align: center;
+}
+.cal-h-day{
+    font-weight: bold;
+}
+.cal-month{
+    text-align: center;
+}
+.cal-b-title{
+    width:calc(100% - 3em);
+}
+.cal-b-title, .cal-button{
+    display: inline-block;
+}
+.cal-button{
+    width:1.5em;
+}
