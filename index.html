@@ -13,12 +13,24 @@
             .cal-h-day{
                 font-weight: bold;
             }
+            .cal-month{
+                text-align: center;
+            }
+            .cal-b-title{
+                width:calc(100% - 3em);
+            }
+            .cal-b-title, .cal-button{
+                display: inline-block;
+            }
+            .cal-button{
+                width:1.5em;
+            }
         </style>
     </head>
     <body>
         <div id="calendario"></div>
         <script>
-            Calendar.init(calendario);
+            Calendar.load(calendario);
         </script>
     </body>
 </html>

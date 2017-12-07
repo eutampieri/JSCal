@@ -1,20 +1,25 @@
 var adesso=new Date();
+function getUrlPromise(url) {
+    return new Promise(function(resolve,reject){
+    var webrequest = new XMLHttpRequest();
+    webrequest.open('GET', url, true);
+    webrequest.onload=function(){
+        resolve(webrequest.responseText);
+    };
+    webrequest.send(null);});
+}
 var Calendar={
-    months: (function(){var a=["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug","Set","Oct","Nov","Dec"];
-    if(navigator.language=="it-IT"){
-        a=["Gen", "Feb", "Mar", "Apr", "Mag", "Giu","Lug", "Ago","Set","Ott","Nov","Dic"];
-    }return a;})(),
-    days: (function(){var a=["S","M","T","W","T","F","S"];
-    if(navigator.language=="it-IT"){
-        a=["L","M","M","G","V","S","D"];
-    }return a;})(),
+    months: null,
+    mondayFirst: null,
+    days: null,
     giorno:adesso.getDate(),
     mese:adesso.getMonth(),
     anno:adesso.getFullYear(),
     primo: null,//Il primo giorno del mese che giorno era della settimana?
     populatedElement: null,
     titolo: (function(){var a=document.createElement("div");a.classList.add("cal-month");return a;})(),    
-    init: function(element){
+    init: function(element, buttons=true){
+        //while(this.mondayFirst===null);
         this.giorno=adesso.getDate(),
         this.mese=adesso.getMonth(),
         this.anno=adesso.getFullYear(),
@@ -22,7 +27,22 @@ var Calendar={
         this.populatedElement=element;
         element.innerHTML="";
         this.titolo.innerHTML=this.months[this.mese]+" "+this.anno.toString();
+        if(buttons){
+            var button=document.createElement("div");
+            button.classList.add("cal-button");
+            button.innerHTML="<";
+            button.onclick=function(){Calendar.prev();};
+            element.appendChild(button);
+            this.titolo.classList.add("cal-b-title");
+        }
         element.appendChild(this.titolo);
+        if(buttons){
+            var button=document.createElement("div");
+            button.classList.add("cal-button");
+            button.innerHTML=">";
+            button.onclick=function(){Calendar.next();};;
+            element.appendChild(button);
+        }
         this.titolo=document.getElementsByClassName("cal-month")[0];
         var tmp=this.giorno;
         while(tmp!=1){
@@ -30,7 +50,7 @@ var Calendar={
             if(this.primo==-1)this.primo=6;
             tmp--;
         }
-        if(navigator.language=="it-IT"){
+        if(this.mondayFirst){
             this.primo--;
             if(this.primo==-1)this.primo=6;
         }
@@ -57,6 +77,27 @@ var Calendar={
             calWrapper.appendChild(giorno);            
         }
         element.appendChild(calWrapper);
+    },
+    load: function(obj){
+        console.log(this.init);
+        getUrlPromise("lang/"+navigator.language.split("-")[0]+".lang").then(function(r){
+            if(r==null){
+                getUrlPromise("lang/en.lang").then(function(ra){
+                    var loc=JSON.parse(ra);
+                    this.Calendar.mondayFirst=loc.MondayFirst;
+                    this.Calendar.months=loc.months;
+                    this.Calendar.days = loc.days;
+                    this.Calendar.init(obj);
+                });
+            }
+            else{
+                var loc=JSON.parse(r);
+                this.Calendar.mondayFirst=loc.MondayFirst;
+                this.Calendar.months=loc.months;
+                this.Calendar.days = loc.days;
+                this.Calendar.init(obj);
+            }
+        });
     },
     next: function(){
         this.mese++;
