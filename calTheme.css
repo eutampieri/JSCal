@@ -30,14 +30,13 @@
 }
 .cal-marked{
     padding-bottom: 0.3em;
-    background-image:
-    url(dot.svg);
+    background-image: url(dot.svg);
     background-size: 0.3em;
     background-repeat: no-repeat;
     background-position: bottom;
 }
 .cal-marked-cal-today{
-    url(wdot.svg)!important;
+    background-image: url(wdot.svg)!important;
 }
 .cal-b-title, .cal-title{
     font-size:1.3em;
