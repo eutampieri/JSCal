@@ -33,7 +33,7 @@
     background-image: url(dot.svg);
     background-size: 0.3em;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center 1.7em;
 }
 .cal-marked-cal-today{
     background-image: url(wdot.svg)!important;
