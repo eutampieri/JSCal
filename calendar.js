@@ -98,7 +98,8 @@ var Calendar={
         }
         element.appendChild(calWrapper);
     },
-    load: function(obj, btn=true){
+    load: function(obj, btn){
+    	btn=(btn===undefined?true:btn);
         getUrlPromise("lang/"+(this.fullSizeText?"full-":"")+navigator.language.split("-")[0]+".lang").then(function(r){
             if(r==null){
                 getUrlPromise("lang/"+(this.fullSizeText?"full-":"")+"en.lang").then(function(ra){
