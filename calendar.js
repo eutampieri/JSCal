@@ -39,7 +39,7 @@ var Calendar={
             button.classList.add("cal-button-l");
             button.onclick=function(){Calendar.prev();};
             head.appendChild(button);
-            this.titolo.classList.add("cal-b-title");
+            this.titolo.classList.add("cal-month");
         }
         head.appendChild(this.titolo);
         if(buttons){
@@ -79,7 +79,7 @@ var Calendar={
         if(1==oggi.getDate()&&this.anno==oggi.getFullYear()&&this.mese==oggi.getMonth()){
             giorno.classList.add("cal-today");
         }
-        if(this.markedDates.indexOf(new Date(this.anno, this.mese, 1))!=-1){
+        if(this.markedDates.indexOf(parseInt(new Date(this.anno, this.mese, 1).getTime()/1000))!=-1){
             giorno.classList.add("cal-marked");
         }
         calWrapper.appendChild(giorno);
@@ -90,7 +90,7 @@ var Calendar={
             if(i==oggi.getDate()&&this.anno==oggi.getFullYear()&&this.mese==oggi.getMonth()){
                 giorno.classList.add("cal-today");
             }
-            if(this.markedDates.indexOf(new Date(this.anno, this.mese, i).getTime())!=-1){
+            if(this.markedDates.indexOf(parseInt(new Date(this.anno, this.mese, i).getTime()/1000))!=-1){
                 giorno.classList.add("cal-marked");
             }
             giorno.innerHTML=i.toString();

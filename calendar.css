@@ -1,4 +1,5 @@
 .cal-wrapper{
+    -js-display: flex;
     display:flex;
     flex-wrap: wrap;
 }
@@ -12,16 +13,17 @@
 .cal-month{
     text-align: center;
 }
-.cal-b-title{
+.cal-month{
     width:calc(100% - 3em);
 }
-.cal-b-title, .cal-button{
+.cal-month, .cal-button{
     display: inline-block;
 }
 .cal-button{
     width:1.5em;
 }
 .cal-head{
+    -js-display: flex;
     display: flex;
     justify-content: space-evenly;
 }

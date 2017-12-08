@@ -4,12 +4,17 @@
         <script src="calendar.js"></script>
         <link rel="stylesheet" href="calendar.css">
         <link rel="stylesheet" href="calTheme.css">
+        <style>
+            html{
+                background-color: #FAFAFA;
+            }
+        </style>
     </head>
     <body>
         <div id="calendario"></div>
         <script>
             var d=new Date();
-            Calendar.markedDates=[new Date(2017,11,8).getTime(), new Date(d.getFullYear(), d.getMonth(), d.getDate()+7).getTime()];
+            Calendar.markedDates=[parseInt(new Date(2017,11,8).getTime()/1000), parseInt(new Date(d.getFullYear(), d.getMonth(), d.getDate()+7).getTime()/1000)];
             Calendar.fullSizeText=true;
             Calendar.load(calendario);
         </script>
