@@ -37,7 +37,7 @@
     background-position: bottom;
 }
 .cal-marked-cal-today{
-    url(wdot.svg);
+    url(wdot.svg)!important;
 }
 .cal-b-title, .cal-title{
     font-size:1.3em;
