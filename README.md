@@ -1,7 +1,7 @@
 # JSCal
 _JSCal_ is a simple, light and highly customiziable calendar written in Vanilla JS. Its main purpose is to display wether or not a resource is available in a certain date (e.g. a hotel room).
 
-If you want to try it, go [here](https:/eutampieri.github.io/JSCal)
+If you want to try it, go [here](https://eutampieri.github.io/JSCal)
 
 ![](doc/demo.png)
 ## Features
