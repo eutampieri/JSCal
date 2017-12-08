@@ -67,6 +67,7 @@ Here's an example for English:
 - `MondayFirst` is a boolean variable that specifies wether or not the first day of week is Monday
 - `days` is an array of strings for days description
 - `months` is an array of strings for months description
+
 If you make a localization file, you would be very kind if you open a pull request or send patch, so your work could help others.
 ## Theming
 To theme the calendar you first have to understand its structure.
