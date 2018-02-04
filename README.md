@@ -40,7 +40,6 @@ To display the calendar with dates marked, you have to populate the `Calendar.ma
 <script>
     var d=new Date();
     Calendar.markedDates=[parseInt(new Date(d.getFullYear(), d.getMonth(), d.getDate()+7).getTime()/1000)];
-    Calendar.markedDates=[true];
     Calendar.load(document.getElementById("your-calendar-div"));
 </script>
 ```
